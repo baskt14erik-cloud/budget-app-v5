@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "Budget Pro v5",
+    "slug": "budget-pro-v5",
+    "scheme": "budgetproai",
+    "orientation": "portrait",
+    "icon": "./assets/app-icon.png",
+    "userInterfaceStyle": "dark",
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Permite a Budget Pro AI usar la cámara para escanear el QR de tu INE y auto completar tus datos.",
+          "barcodeScannerEnabled": true
+        }
+      ],
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "Permite usar Face ID para acceso rápido."
+        }
+      ],
+      "./plugins/withIneOcrBridge"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.budgetproai.app"
+    },
+    "android": {
+      "package": "com.openai.budgetprov5",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/app-icon.png",
+        "backgroundColor": "#020617"
+      },
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "CAMERA",
+        "USE_BIOMETRIC"
+      ]
+    },
+    "extra": {
+      "eas": {
+        "projectId": "replace-with-your-eas-project-id"
+      }
+    }
+  }
+}
